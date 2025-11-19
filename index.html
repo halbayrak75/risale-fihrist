@@ -13,9 +13,9 @@
 
     <style>
         :root {
-            --bg-primary: #0f172a; /* Çok koyu lacivert */
-            --bg-secondary: #1e293b; /* Kart rengi */
-            --accent-gold: #fbbf24; /* Altın sarısı */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-gold: #fbbf24;
             --text-primary: #f8fafc;
             --text-muted: #94a3b8;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
@@ -38,10 +38,8 @@
             padding: 80px 20px;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            overflow: hidden;
         }
 
-        /* Arka plana hafif bir desen ekleyelim */
         header::before {
             content: '';
             position: absolute;
@@ -90,10 +88,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
         }
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
-        }
+        .cta-button:hover { transform: translateY(-3px) scale(1.05); }
         .cta-button i { margin-right: 10px; }
 
         /* --- İÇERİK ALANI --- */
@@ -134,7 +129,6 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--shadow);
-            position: relative;
         }
 
         .card:hover {
@@ -156,9 +150,7 @@
             border: none;
         }
 
-        .card-content {
-            padding: 25px;
-        }
+        .card-content { padding: 25px; }
 
         .badge {
             display: inline-block;
@@ -181,7 +173,6 @@
             color: #fff;
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: #020617;
             text-align: center;
@@ -190,13 +181,11 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* --- ANİMASYON --- */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobilde başlık ayarı */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .grid { grid-template-columns: 1fr; }
@@ -219,17 +208,17 @@
 
         <section>
             <div class="section-header">
-                <h2 class="section-title"><i class="fas fa-broadcast-tower" style="font-size:0.8em; margin-right:10px;"></i> Son Yayınlananlar</h2>
+                <h2 class="section-title"><i class="fas fa-star" style="font-size:0.8em; margin-right:10px;"></i> Başucu Eseri: Sözler</h2>
             </div>
             
             <div class="card" style="border: 1px solid var(--accent-gold);">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUYRaQjT_w6jVHNHB0y1BpTA" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <span class="badge" style="background: var(--accent-gold); color: #000;">CANLI AKIŞ</span>
-                    <span class="card-title">Kanal Akışı ve En Son Videolar</span>
-                    <p style="color: var(--text-muted); margin-top:10px; font-size: 0.95rem;">Kanalımıza yüklenen en yeni içerikleri buradan kesintisiz izleyebilirsiniz.</p>
+                    <span class="badge" style="background: var(--accent-gold); color: #000;">ÖNE ÇIKAN</span>
+                    <span class="card-title">Sözler - Risale-i Nur Külliyatı</span>
+                    <p style="color: var(--text-muted); margin-top:10px; font-size: 0.95rem;">İman hakikatlerinin detaylı izahlarını içeren bu temel eseri sırasıyla dinleyebilirsiniz.</p>
                 </div>
             </div>
         </section>
@@ -248,23 +237,20 @@
             <i class="fas fa-feather-alt"></i>
         </div>
         <p>&copy; 2025 Risale-i Nur Dijital Fihristi</p>
-        <p style="font-size: 0.8rem; opacity: 0.5;">GitHub Pages altyapısı ile hazırlanmıştır.</p>
     </footer>
 
     <script>
-        // OYNATMA LİSTELERİ VERİTABANI
+        // OYNATMA LİSTELERİ (Sözler yukarıda olduğu için buradan çıkardım, diğerleri burada)
         const playlists = [
-            { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler", desc: "İman hakikatlerinin detaylı izahları." },
+            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Külliyatın bir nevi çekirdeği ve fidanlığı." },
+            { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları", desc: "Mesnevi'den seçme dersler ve parçalar." },
             { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat", desc: "Çeşitli suallere cevaplar ve mektuplar." },
             { id: "PL_b0Tv5wTLEZ_l9M5w6__Tqftdk1DbALX", title: "Lem'alar", desc: "Esma-i Hüsna cilveleri ve nefis terbiyesi." },
-            { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat", desc: "Bediüzzaman Said Nursi'nin hayatı." },
-            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Külliyatın bir nevi çekirdeği." },
-            { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları", desc: "Kısa parçalar ve dersler." }
+            { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat", desc: "Bediüzzaman Said Nursi'nin hayatı." }
         ];
 
         const grid = document.getElementById('playlistGrid');
         
-        // Kartları oluştururken gecikme ekleyerek animasyon yapalım
         playlists.forEach((list, index) => {
             grid.innerHTML += `
                 <div class="card" style="animation: fadeUp 0.5s ease-out ${index * 0.1}s both;">
@@ -272,7 +258,7 @@
                         <iframe src="https://www.youtube.com/embed/videoseries?list=${list.id}" allowfullscreen></iframe>
                     </div>
                     <div class="card-content">
-                        <span class="badge">KİTAP / ESER</span>
+                        <span class="badge">ESER</span>
                         <span class="card-title">${list.title}</span>
                         <p style="color: #64748b; font-size: 0.9rem; margin-top: 5px;">${list.desc}</p>
                     </div>

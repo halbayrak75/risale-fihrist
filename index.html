@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Risale-i Nur - Yapay Zeka Tanıtım">
+    <meta property="og:description" content="Risale-i Nur Külliyatı üzerine yapay zeka tarafından üretilmiş tanıtım podcastleri ve dijital fihrist.">
+    <meta property="og:image" content="https://yt3.googleusercontent.com/BkGF0hkgDPFQY8kvfhZLfY29vgotA6IbuXc2-3l06rU_3sxpRQbKQgqtQxl0ie7J3l3m61Zg=s176-c-k-c0x00ffffff-no-rj"> <meta property="og:url" content="https://halbayrak75.github.io/risale-fihrist/">
+    <meta property="og:type" content="website">
+    
     <title>Risale-i Nur - Yapay Zeka Tanıtım</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,13 +18,13 @@
 
     <style>
         :root {
-            --bg-primary: #0f0f0f; /* Tam Siyah */
-            --bg-secondary: #181818; /* Koyu Gri Kartlar */
-            --accent-red: #d32f2f; /* Risale Kırmızısı (Canlı) */
-            --accent-dark-red: #8e0000; /* Bordo (Derinlik için) */
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #181818;
+            --accent-red: #d32f2f;
+            --accent-dark-red: #8e0000;
             --text-primary: #eeeeee;
             --text-muted: #9e9e9e;
-            --shadow: 0 10px 20px rgba(211, 47, 47, 0.1); /* Hafif kırmızı gölge */
+            --shadow: 0 10px 20px rgba(211, 47, 47, 0.1);
         }
 
         body {
@@ -31,12 +37,10 @@
             overflow-x: hidden;
         }
 
-        /* --- HERO BÖLÜMÜ --- */
         header {
             position: relative;
-            /* Kırmızıdan siyaha geçiş */
             background: radial-gradient(circle at top, #3f0000 0%, #0f0f0f 80%);
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-bottom: 1px solid #333;
         }
@@ -51,66 +55,37 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin: 0;
             color: #fff;
             text-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
         }
 
-        p.bio {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-top: 15px;
-        }
+        p.bio { color: var(--text-muted); font-size: 1.1rem; margin-top: 15px; }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
             background-color: var(--accent-dark-red);
             color: #fff;
-            padding: 12px 30px;
-            border-radius: 4px; /* Köşeli klasik yapı */
+            padding: 10px 25px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 25px;
+            margin-top: 20px;
             transition: all 0.3s ease;
             border: 1px solid var(--accent-red);
+            font-size: 0.9rem;
         }
-        .cta-button:hover {
-            background-color: var(--accent-red);
-            box-shadow: 0 0 15px rgba(211, 47, 47, 0.6);
-            transform: translateY(-2px);
-        }
-        .cta-button i { margin-right: 10px; }
+        .cta-button:hover { background-color: var(--accent-red); transform: translateY(-2px); }
 
-        /* --- İÇERİK ALANI --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        section { margin-bottom: 60px; }
 
-        section { margin-bottom: 70px; }
+        .section-header { border-left: 4px solid var(--accent-red); padding-left: 15px; margin-bottom: 25px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #fff; margin: 0; }
 
-        .section-header {
-            border-left: 4px solid var(--accent-red);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #fff;
-            margin: 0;
-        }
-
-        /* --- KART TASARIMLARI --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
 
         .card {
             background-color: var(--bg-secondary);
@@ -118,75 +93,45 @@
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
-            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-red);
-            box-shadow: var(--shadow);
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-red); }
 
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #000;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
-        }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        .card-content { padding: 20px; }
+        .card-content { padding: 20px; flex-grow: 1; }
 
         .badge {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--accent-red);
-            border: 1px solid var(--accent-dark-red);
-            padding: 3px 8px;
-            border-radius: 3px;
-            margin-bottom: 8px;
+            display: inline-block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+            color: var(--accent-red); border: 1px solid var(--accent-dark-red);
+            padding: 3px 8px; border-radius: 3px; margin-bottom: 8px;
         }
 
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 500;
+        .card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 500; display: block; color: #fff; margin-bottom: 8px; }
+        .card-desc { font-size: 0.9rem; color: #888; line-height: 1.4; margin-bottom: 15px; }
+
+        /* Yeni Eklenen Uygulama Butonu */
+        .app-link {
             display: block;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-        
-        .card-desc {
-            font-size: 0.9rem;
-            color: #888;
-            line-height: 1.4;
-        }
-
-        footer {
-            background-color: #0a0a0a;
             text-align: center;
-            padding: 40px;
-            color: #555;
-            border-top: 1px solid #222;
-            font-size: 0.9rem;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 0.85rem;
+            border-top: 1px solid #333;
+            transition: 0.2s;
         }
+        .app-link:hover { background: #333; color: var(--accent-red); }
+        .app-link i { margin-right: 5px; color: red; }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        footer { background-color: #0a0a0a; text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; font-size: 0.9rem; }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -194,9 +139,9 @@
     <header>
         <div class="header-content">
             <h1>Risale-i Nur<br>Yapay Zeka Tanıtımı</h1>
-            <p class="bio">Risale-i Nur Külliyatı üzerine yapay zeka tarafından üretilmiş tanıtım podcastleri ve fihrist çalışmaları.</p>
-            <a href="https://www.youtube.com/channel/UCYRaQjT_w6jVHNHB0y1BpTA?sub_confirmation=1" target="_blank" class="cta-button">
-                <i class="fab fa-youtube"></i> YouTube Kanalı
+            <p class="bio">Risale-i Nur Külliyatı yapay zeka destekli tanıtım podcastleri.</p>
+            <a href="https://www.youtube.com/channel/UCYRaQjT_w6jVHNHB0y1BpTA?sub_confirmation=1" class="cta-button">
+                <i class="fab fa-youtube"></i> Kanalı Takip Et
             </a>
         </div>
     </header>
@@ -205,9 +150,8 @@
 
         <section>
             <div class="section-header">
-                <h2 class="section-title">Son Eklenen Podcast</h2>
+                <h2 class="section-title">Son Eklenen Bölüm</h2>
             </div>
-            
             <div class="card" style="border-color: var(--accent-dark-red);">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/TH5_7oGNYoQ" allowfullscreen></iframe>
@@ -215,14 +159,17 @@
                 <div class="card-content">
                     <span class="badge" style="background: var(--accent-red); color: #fff; border:none;">YENİ</span>
                     <span class="card-title">Sözler Giriş ve Tanıtım</span> 
-                    <p class="card-desc">Yapay zeka tarafından seslendirilen Sözler mecmuası tanıtım bölümü.</p>
+                    <p class="card-desc">Sözler mecmuası yapay zeka tanıtım bölümü.</p>
                 </div>
+                <a href="https://www.youtube.com/watch?v=TH5_7oGNYoQ" class="app-link">
+                    <i class="fab fa-youtube"></i> YouTube Uygulamasında Aç
+                </a>
             </div>
         </section>
 
         <section>
             <div class="section-header">
-                <h2 class="section-title">Külliyat Podcast Listeleri</h2>
+                <h2 class="section-title">Podcast Serileri</h2>
             </div>
             <div class="grid" id="playlistGrid"></div>
         </section>
@@ -234,14 +181,13 @@
     </footer>
 
     <script>
-        // LİSTELER (Açıklamalar sadeleştirildi)
         const playlists = [
-            { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler", desc: "Yapay zeka destekli Sözler fihristi." },
-            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Mesnevi-i Nuriye için hazırlanan podcastler." },
+            { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler", desc: "Sözler fihristi ve tanıtımı." },
+            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Mesnevi-i Nuriye podcastleri." },
             { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları", desc: "Kısa tanıtım parçaları." },
-            { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat", desc: "Mektubat mecmuası tanıtım serisi." },
-            { id: "PL_b0Tv5wTLEZ_l9M5w6__Tqftdk1DbALX", title: "Lem'alar", desc: "Lem'alar mecmuası yapay zeka okumaları." },
-            { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat", desc: "Tarihçe-i Hayat özet tanıtımı." }
+            { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat", desc: "Mektubat mecmuası serisi." },
+            { id: "PL_b0Tv5wTLEZ_l9M5w6__Tqftdk1DbALX", title: "Lem'alar", desc: "Lem'alar mecmuası okumaları." },
+            { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat", desc: "Tarihçe-i Hayat özeti." }
         ];
 
         const grid = document.getElementById('playlistGrid');
@@ -253,10 +199,13 @@
                         <iframe src="https://www.youtube.com/embed/videoseries?list=${list.id}" allowfullscreen></iframe>
                     </div>
                     <div class="card-content">
-                        <span class="badge">PODCAST SERİSİ</span>
+                        <span class="badge">SERİ</span>
                         <span class="card-title">${list.title}</span>
                         <p class="card-desc">${list.desc}</p>
                     </div>
+                    <a href="https://www.youtube.com/playlist?list=${list.id}" class="app-link">
+                        <i class="fab fa-youtube"></i> YouTube Uygulamasında Aç
+                    </a>
                 </div>
             `;
         });

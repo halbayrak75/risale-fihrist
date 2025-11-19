@@ -166,14 +166,14 @@
             bio: "Risale-i Nur Külliyatı'nın Yapay Zeka destekli sesli ve görüntülü fihrist çalışmaları."
         };
 
-        // 2. OYNATMA LİSTELERİ (Senin kanalından aldığım gerçek ID'ler)
-        // Yeni eklemek istersen: { id: "LİSTE_ID", title: "BAŞLIK" } formatında ekle.
+        // 2. OYNATMA LİSTELERİ (YENİ LİSTE EKLENDİ)
         const playlists = [
             { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler - Yapay Zeka Tanıtım Fihristi" },
             { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat - Yapay Zeka Tanıtım Fihristi" },
             { id: "PL_b0Tv5wTLEZ_l9M5w6__Tqftdk1DbALX", title: "Lem'alar - Yapay Zeka Tanıtım Fihristi" },
             { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat - Yapay Zeka Tanıtım Fihristi" },
-            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye - Yapay Zeka Tanıtım Fihristi" }
+            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye - Yapay Zeka Tanıtım Fihristi" },
+            { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları" } // Yeni eklenen liste
         ];
 
         // 3. VİDEOLAR (Örnek olarak birkaç videonu ekledim, değiştirebilirsin)
@@ -192,6 +192,7 @@
 
         // Oynatma Listelerini Oluştur
         const playlistGrid = document.getElementById('playlistGrid');
+        playlistGrid.innerHTML = ""; // Temizle
         playlists.forEach(list => {
             playlistGrid.innerHTML += `
                 <div class="card">
@@ -208,6 +209,7 @@
 
         // Videoları Oluştur
         const videoGrid = document.getElementById('videoGrid');
+        videoGrid.innerHTML = ""; // Temizle
         videos.forEach(video => {
             videoGrid.innerHTML += `
                 <div class="card">

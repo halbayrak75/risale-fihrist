@@ -129,6 +129,7 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--shadow);
+            position: relative;
         }
 
         .card:hover {
@@ -181,11 +182,13 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
+        /* --- ANİMASYON --- */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Mobilde başlık ayarı */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .grid { grid-template-columns: 1fr; }
@@ -208,17 +211,17 @@
 
         <section>
             <div class="section-header">
-                <h2 class="section-title"><i class="fas fa-star" style="font-size:0.8em; margin-right:10px;"></i> Başucu Eseri: Sözler</h2>
+                <h2 class="section-title"><i class="fas fa-play-circle" style="font-size:0.8em; margin-right:10px;"></i> En Son Yüklenen Video</h2>
             </div>
             
             <div class="card" style="border: 1px solid var(--accent-gold);">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/TH5_7oGNYoQ" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <span class="badge" style="background: var(--accent-gold); color: #000;">ÖNE ÇIKAN</span>
-                    <span class="card-title">Sözler - Risale-i Nur Külliyatı</span>
-                    <p style="color: var(--text-muted); margin-top:10px; font-size: 0.95rem;">İman hakikatlerinin detaylı izahlarını içeren bu temel eseri sırasıyla dinleyebilirsiniz.</p>
+                    <span class="badge" style="background: var(--accent-gold); color: #000;">EN YENİ</span>
+                    <span class="card-title">Sözler Giriş ve Tanıtım</span> 
+                    <p style="color: var(--text-muted); margin-top:10px; font-size: 0.95rem;">Kanalımıza yüklenen en son videoyu buradan izleyebilirsiniz.</p>
                 </div>
             </div>
         </section>
@@ -240,8 +243,9 @@
     </footer>
 
     <script>
-        // OYNATMA LİSTELERİ (Sözler yukarıda olduğu için buradan çıkardım, diğerleri burada)
+        // OYNATMA LİSTELERİ
         const playlists = [
+            { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler", desc: "İman hakikatlerinin detaylı izahları." },
             { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Külliyatın bir nevi çekirdeği ve fidanlığı." },
             { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları", desc: "Mesnevi'den seçme dersler ve parçalar." },
             { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat", desc: "Çeşitli suallere cevaplar ve mektuplar." },

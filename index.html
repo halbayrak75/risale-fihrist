@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risale-i Nur Dijital Fihristi</title>
+    <title>Risale-i Nur - Yapay Zeka Tanıtım</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --accent-gold: #fbbf24;
-            --text-primary: #f8fafc;
-            --text-muted: #94a3b8;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --bg-primary: #0f0f0f; /* Tam Siyah */
+            --bg-secondary: #181818; /* Koyu Gri Kartlar */
+            --accent-red: #d32f2f; /* Risale Kırmızısı (Canlı) */
+            --accent-dark-red: #8e0000; /* Bordo (Derinlik için) */
+            --text-primary: #eeeeee;
+            --text-muted: #9e9e9e;
+            --shadow: 0 10px 20px rgba(211, 47, 47, 0.1); /* Hafif kırmızı gölge */
         }
 
         body {
@@ -27,26 +27,18 @@
             color: var(--text-primary);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* --- HERO BÖLÜMÜ (ÜST KISIM) --- */
+        /* --- HERO BÖLÜMÜ --- */
         header {
             position: relative;
-            background: radial-gradient(circle at top right, #334155 0%, #0f172a 100%);
+            /* Kırmızıdan siyaha geçiş */
+            background: radial-gradient(circle at top, #3f0000 0%, #0f0f0f 80%);
             padding: 80px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            z-index: 0;
+            border-bottom: 1px solid #333;
         }
 
         .header-content {
@@ -59,59 +51,57 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
-            background: linear-gradient(to right, #fff, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
         }
 
         p.bio {
             color: var(--text-muted);
-            font-size: 1.25rem;
-            margin-top: 20px;
-            font-weight: 300;
+            font-size: 1.2rem;
+            margin-top: 15px;
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #d97706, #fbbf24);
-            color: #0f172a;
-            padding: 15px 35px;
-            border-radius: 50px;
+            background-color: var(--accent-dark-red);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 4px; /* Köşeli klasik yapı */
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 30px;
+            margin-top: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+            border: 1px solid var(--accent-red);
         }
-        .cta-button:hover { transform: translateY(-3px) scale(1.05); }
+        .cta-button:hover {
+            background-color: var(--accent-red);
+            box-shadow: 0 0 15px rgba(211, 47, 47, 0.6);
+            transform: translateY(-2px);
+        }
         .cta-button i { margin-right: 10px; }
 
         /* --- İÇERİK ALANI --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
 
-        section { margin-bottom: 80px; }
+        section { margin-bottom: 70px; }
 
         .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
+            border-left: 4px solid var(--accent-red);
+            padding-left: 15px;
+            margin-bottom: 25px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--accent-gold);
+            font-size: 1.8rem;
+            color: #fff;
             margin: 0;
         }
 
@@ -119,23 +109,22 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .card {
             background-color: var(--bg-secondary);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 16px;
+            border: 1px solid #333;
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
             position: relative;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-            border-color: rgba(251, 191, 36, 0.3);
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+            box-shadow: var(--shadow);
         }
 
         .video-wrapper {
@@ -151,46 +140,51 @@
             border: none;
         }
 
-        .card-content { padding: 25px; }
+        .card-content { padding: 20px; }
 
         .badge {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-gold);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
+            color: var(--accent-red);
+            border: 1px solid var(--accent-dark-red);
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 8px;
         }
 
         .card-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 500;
             display: block;
             color: #fff;
+            margin-bottom: 8px;
+        }
+        
+        .card-desc {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.4;
         }
 
         footer {
-            background-color: #020617;
+            background-color: #0a0a0a;
             text-align: center;
-            padding: 50px 20px;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 40px;
+            color: #555;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
         }
 
-        /* --- ANİMASYON --- */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobilde başlık ayarı */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
+            h1 { font-size: 2rem; }
             .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -199,10 +193,10 @@
 
     <header>
         <div class="header-content">
-            <h1>Risale-i Nur<br>Dijital Fihristi</h1>
-            <p class="bio">Yapay Zeka teknolojisi ile Risale-i Nur Külliyatı'nın sesli ve görüntülü fihrist çalışmaları.</p>
+            <h1>Risale-i Nur<br>Yapay Zeka Tanıtımı</h1>
+            <p class="bio">Risale-i Nur Külliyatı üzerine yapay zeka tarafından üretilmiş tanıtım podcastleri ve fihrist çalışmaları.</p>
             <a href="https://www.youtube.com/channel/UCYRaQjT_w6jVHNHB0y1BpTA?sub_confirmation=1" target="_blank" class="cta-button">
-                <i class="fab fa-youtube"></i> YouTube'da Takip Et
+                <i class="fab fa-youtube"></i> YouTube Kanalı
             </a>
         </div>
     </header>
@@ -211,24 +205,24 @@
 
         <section>
             <div class="section-header">
-                <h2 class="section-title"><i class="fas fa-play-circle" style="font-size:0.8em; margin-right:10px;"></i> En Son Yüklenen Video</h2>
+                <h2 class="section-title">Son Eklenen Podcast</h2>
             </div>
             
-            <div class="card" style="border: 1px solid var(--accent-gold);">
+            <div class="card" style="border-color: var(--accent-dark-red);">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/TH5_7oGNYoQ" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <span class="badge" style="background: var(--accent-gold); color: #000;">EN YENİ</span>
+                    <span class="badge" style="background: var(--accent-red); color: #fff; border:none;">YENİ</span>
                     <span class="card-title">Sözler Giriş ve Tanıtım</span> 
-                    <p style="color: var(--text-muted); margin-top:10px; font-size: 0.95rem;">Kanalımıza yüklenen en son videoyu buradan izleyebilirsiniz.</p>
+                    <p class="card-desc">Yapay zeka tarafından seslendirilen Sözler mecmuası tanıtım bölümü.</p>
                 </div>
             </div>
         </section>
 
         <section>
             <div class="section-header">
-                <h2 class="section-title"><i class="fas fa-book-open" style="font-size:0.8em; margin-right:10px;"></i> Külliyat Kitaplığı</h2>
+                <h2 class="section-title">Külliyat Podcast Listeleri</h2>
             </div>
             <div class="grid" id="playlistGrid"></div>
         </section>
@@ -236,21 +230,18 @@
     </div>
 
     <footer>
-        <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 20px;">
-            <i class="fas fa-feather-alt"></i>
-        </div>
-        <p>&copy; 2025 Risale-i Nur Dijital Fihristi</p>
+        <p>&copy; 2025 Risale-i Nur Yapay Zeka Tanıtımı</p>
     </footer>
 
     <script>
-        // OYNATMA LİSTELERİ
+        // LİSTELER (Açıklamalar sadeleştirildi)
         const playlists = [
-            { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler", desc: "İman hakikatlerinin detaylı izahları." },
-            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Külliyatın bir nevi çekirdeği ve fidanlığı." },
-            { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları", desc: "Mesnevi'den seçme dersler ve parçalar." },
-            { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat", desc: "Çeşitli suallere cevaplar ve mektuplar." },
-            { id: "PL_b0Tv5wTLEZ_l9M5w6__Tqftdk1DbALX", title: "Lem'alar", desc: "Esma-i Hüsna cilveleri ve nefis terbiyesi." },
-            { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat", desc: "Bediüzzaman Said Nursi'nin hayatı." }
+            { id: "PL_b0Tv5wTLEbvwy1EXBR4-TZqs8zP-6hj", title: "Sözler", desc: "Yapay zeka destekli Sözler fihristi." },
+            { id: "PL_b0Tv5wTLEbLEuwciEg_stGUuUKZtA-3", title: "Mesnevi-i Nuriye", desc: "Mesnevi-i Nuriye için hazırlanan podcastler." },
+            { id: "PL_b0Tv5wTLEbnCJH1MzKws-Tp_EwSO2U_", title: "Mesnevi-i Nuriye Parçaları", desc: "Kısa tanıtım parçaları." },
+            { id: "PL_b0Tv5wTLEbpxGs-a3s-oD4Zc8FU1RcH", title: "Mektubat", desc: "Mektubat mecmuası tanıtım serisi." },
+            { id: "PL_b0Tv5wTLEZ_l9M5w6__Tqftdk1DbALX", title: "Lem'alar", desc: "Lem'alar mecmuası yapay zeka okumaları." },
+            { id: "PL_b0Tv5wTLEa8_3xaLFW41JAqhfCIqGBx", title: "Tarihçe-i Hayat", desc: "Tarihçe-i Hayat özet tanıtımı." }
         ];
 
         const grid = document.getElementById('playlistGrid');
@@ -262,9 +253,9 @@
                         <iframe src="https://www.youtube.com/embed/videoseries?list=${list.id}" allowfullscreen></iframe>
                     </div>
                     <div class="card-content">
-                        <span class="badge">ESER</span>
+                        <span class="badge">PODCAST SERİSİ</span>
                         <span class="card-title">${list.title}</span>
-                        <p style="color: #64748b; font-size: 0.9rem; margin-top: 5px;">${list.desc}</p>
+                        <p class="card-desc">${list.desc}</p>
                     </div>
                 </div>
             `;
